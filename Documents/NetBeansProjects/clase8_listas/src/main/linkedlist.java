@@ -208,7 +208,7 @@ public class linkedlist <T>{
     
 
     public Node getNode(int valor){
-        if (isEmpty() && valor < size()) {
+        if (!isEmpty() && valor < size()) {
             Node<T> aux = this.head;
             for (int i = 0; i < valor; i++) {
                 aux = aux.getNext();
