@@ -226,7 +226,30 @@ public class linkedlist <T>{
         }
         return array;
     }
-        
+    
+    public void setHead(Node <T> head){
+        this.head = head;
+    }
+    
+    public void setTail(Node <T> head){
+        this.tail = head;
+    }
+    
+    
+    public void Reverse(){
+        Node prev = null;
+        Node current = this.head;
+        Node next = null;
+        this.setTail(current);
+        while(current != null){
+            next = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = next;
+        }
+        this.setHead(prev);
+    }
+    
 }
 
 
