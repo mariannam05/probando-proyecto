@@ -25,6 +25,8 @@ public class main {
         list.print();
         list.getPosicion(70);
         list.convertVector();
+        list.Reverse();
+        list.print();
         
         
     }
