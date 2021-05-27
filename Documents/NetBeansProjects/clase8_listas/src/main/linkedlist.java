@@ -14,6 +14,9 @@ public class linkedlist <T>{
     private Node<T> head;
     private Node<T> tail;
 
+    public Node<T> getHead() {
+        return this.head;
+    }
     
     public linkedlist() {
         this.head = this.tail = null;
@@ -90,7 +93,7 @@ public class linkedlist <T>{
     public void add(T datum, int i) {
         if (isEmpty() || i == 0) {
             this.addFirst(datum);
-        } else if (i >= (size() - 1)) {
+        } else if (i >= size()) {
             this.addLast(datum);
         } else if (i < 0) {
             this.add(datum, size() + i);
@@ -106,7 +109,7 @@ public class linkedlist <T>{
             aux.setNext(n);
         }
     }
-
+    
     
     public T deleteFirst() {
         if (isEmpty()) {
@@ -118,7 +121,7 @@ public class linkedlist <T>{
         return temp.getData();
     }
     
-    
+
     public T deleteLast() {
         if (isEmpty()) {
             return null;
@@ -134,7 +137,6 @@ public class linkedlist <T>{
         return temp.getData();
         
     }
-    
     
     public T delete(int i) {
         if (isEmpty()) {
@@ -190,7 +192,6 @@ public class linkedlist <T>{
             System.out.println("");
         }
     }
-
     
     public void showsize() {     //ese nombre porque puse size y exploto
         if (isEmpty()) {
@@ -250,6 +251,19 @@ public class linkedlist <T>{
         this.setHead(prev);
     }
     
+    public void completeList() {
+        Node current = this.head;
+        int index = 1;
+        // 7, 8, 10, 13
+        while (current.getNext() != null) {
+            if (Node.getValueAsInteger(current) + 1 != Node.getValueAsInteger(current.getNext())) {
+                Integer a = Node.getValueAsInteger(current) + 1;
+                this.add((T) a, index);
+            }
+            current = current.getNext();
+            index++;
+        }
+    }
 }
 
 
