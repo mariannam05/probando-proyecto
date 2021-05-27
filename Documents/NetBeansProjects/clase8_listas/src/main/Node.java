@@ -54,4 +54,11 @@ public class Node<T>{
         this.next = next;
     }
     
+    public static int getValueAsInteger(Node n) {
+        String nClass = n.getData().getClass().getSimpleName();
+        
+        if (nClass.equals("Integer")) return (Integer)n.getData();
+        
+        return 0;
+    }
 }
