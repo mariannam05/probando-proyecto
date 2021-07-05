@@ -12,6 +12,7 @@ import static java.lang.System.nanoTime;
  * @author Sabrina Correia
  */
 public class Analisis {
+    
 
     public String analizar(String key, HashTable table) {
         long  time1 =  nanoTime();
